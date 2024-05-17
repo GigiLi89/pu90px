@@ -1,3 +1,5 @@
+{% load static %}
+
 {% url 'home' as home_url %}
 
 <!DOCTYPE html>
@@ -18,15 +20,18 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body class="d-flex flex-column h-100 main-bg">
 
     <!-- Navigation -->
+
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
         <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}"><span class="brand">PU90PX</span></span></a>
+            <a class="navbar-brand" href="{% url 'home' %}">
+                <img src="{% static 'images/pu90px_logo.webp' %}" alt="Logo">
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
                 aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -37,10 +42,9 @@
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
                             href="#">Home</a>
                     </li>
-
                 </ul>
                 <span class="navbar-text text-muted">
-                    adventures of a software developer
+                    PU90PX Photo Album
                 </span>
             </div>
         </div>
