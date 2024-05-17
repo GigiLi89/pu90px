@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PU90PX</title>
+</head>
+<body>
+    <h1>Posts</h1>
+    {% for post in object_list %}
+    <h2>{{post.title}}</h2>
+    
+    <!-- Display the image if it exists -->
+    {% if post.image %}
+    <img src="{{ post.image.url }}" alt="{{ post.title }}">
+    {% endif %}
+    
+    <p>{{post.excerpt}}</p>
+    <p>Author: {{post.author}}</p>
+    {% endfor %}
+</body>
+</html>
