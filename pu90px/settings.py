@@ -33,7 +33,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-gigili89-pu90px-5w4wvhtne2p.ws-eu114.gitpod.io',
+ALLOWED_HOSTS = ['8000-gigili89-pu90px-5w4wvhtne2p.ws-eu111.gitpod.io',
                 '.herokuapp.com']
 
 
@@ -101,7 +101,7 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
-    "https://8000-gigili89-pu90px-5w4wvhtne2p.ws-eu114.gitpod.io",
+    "https://8000-gigili89-pu90px-5w4wvhtne2p.ws-eu111.gitpod.io",
     "https://*.ws.gitpod.io",
     "https://*.herokuapp.com",
     
@@ -139,9 +139,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [
-    BASE_DIR / "static",
-]
+STATICFILES_DIRS = [BASE_DIR / "static",]
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
