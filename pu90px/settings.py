@@ -101,9 +101,10 @@ DATABASES = {
 }
 
 CSRF_TRUSTED_ORIGINS = [
+    "https://8000-gigili89-pu90px-5w4wvhtne2p.ws-eu114.gitpod.io",
     "https://*.ws.gitpod.io",
     "https://*.herokuapp.com",
-    "https://8000-gigili89-pu90px-5w4wvhtne2p.ws-eu111.gitpod.io"
+    
 ]
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -138,6 +139,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [
+    BASE_DIR / "static",
+]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
