@@ -38,13 +38,31 @@
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link {% if request.path == home_url %}active{% endif %}" aria-current="page"
-                            href="#">{% url 'home' %}</a>
-                        <a class="nav-link" href="{% url 'home' %}">Album</a>
+                            href="{% url 'home' %}">Home</a>
                     </li>
-                </ul>
-                <span class="navbar-text text-muted">
-                    PU90PX
-                </span>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Album
+                        </a>
+                        
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            {% for category in category_list %}
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        {{ category.name|title }}
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                        {% for post in category.post_set.all %}
+                                            <li><a class="dropdown-item" href="{% url 'post_detail' post.slug %}">
+                                                {{ post.title }}
+                                            </a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                        
             </div>
         </div>
     </nav>
