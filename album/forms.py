@@ -9,3 +9,9 @@ class CommentForm(forms.ModelForm):
         labels = {
             'body': 'Comment'
         }
+
+class UserDeactivateForm(forms.Form):
+    confirm = forms.BooleanField(label="Confirm deactivation")
+
+class UserDeleteForm(forms.Form):
+    confirm = forms.BooleanField(label="Confirm deletion")

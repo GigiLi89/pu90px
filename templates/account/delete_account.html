@@ -1,0 +1,7 @@
+<h2>Delete Account</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Delete</button>
+    <a href="{% url 'profile' %}">Cancel</a>
+</form>

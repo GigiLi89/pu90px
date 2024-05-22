@@ -1,9 +1,12 @@
-from django.shortcuts import render, get_object_or_404, reverse
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.views import generic
 from .models import Post, Category, Comment
-from .forms import CommentForm
+from .forms import CommentForm, UserDeactivateForm, UserDeleteForm
 from django.contrib import messages
 from django.http import HttpResponseRedirect
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth import logout
+from django.contrib.auth.models import User
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
@@ -30,8 +33,6 @@ def post_detail(request, slug):
     else:
         comment_form = CommentForm()
 
-    print(post.__dict__)
-
     return render(request, "album/post_detail.html", {
         "post": post,
         "coder": "PU90PX",  
@@ -39,7 +40,6 @@ def post_detail(request, slug):
         "comment_count": comment_count,
         "comment_form": comment_form,
     })
-
 
 class CategoryList(generic.ListView):
     template_name = 'base.html'
@@ -52,17 +52,11 @@ class CategoryList(generic.ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['category_list'] = Category.objects.exclude(name='default')
-
-        # Pass categories to the template context
         context['categories'] = Category.objects.all()
         return context
 
 def comment_edit(request, slug, comment_id):
-    """
-    view to edit comments
-    """
     if request.method == "POST":
-
         queryset = Post.objects.filter(status=1)
         post = get_object_or_404(queryset, slug=slug)
         comment = get_object_or_404(Comment, pk=comment_id)
@@ -80,9 +74,6 @@ def comment_edit(request, slug, comment_id):
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
 def comment_delete(request, slug, comment_id):
-    """
-    view to delete comment
-    """
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comment = get_object_or_404(Comment, pk=comment_id)
@@ -94,3 +85,36 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+@login_required
+def deactivate_account(request):
+    if request.method == "POST":
+        form = UserDeactivateForm(request.POST)
+        if form.is_valid() and form.cleaned_data.get('confirm'):
+            user = request.user
+            user.is_active = False
+            user.save()
+            messages.success(request, "Your account has been deactivated.")
+            logout(request)
+            return redirect("home")  # Adjust this to redirect to an appropriate page
+    else:
+        form = UserDeactivateForm()
+    return render(request, "account/deactivate_account.html", {"form": form})
+
+@login_required
+def delete_account(request):
+    if request.method == "POST":
+        form = UserDeleteForm(request.POST)
+        if form.is_valid() and form.cleaned_data.get('confirm'):
+            user = request.user
+            logout(request)
+            user.delete()
+            messages.success(request, "Your account has been deleted.")
+            return redirect("home")  # Adjust this to redirect to an appropriate page
+    else:
+        form = UserDeleteForm()
+    return render(request, "account/delete_account.html", {"form": form})
+
+@login_required
+def profile(request):
+    return render(request, "account/profile.html")
