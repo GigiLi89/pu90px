@@ -1,6 +1,7 @@
 from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from .models import Post, Category
+from .forms import CommentForm
 
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
@@ -10,7 +11,18 @@ class PostList(generic.ListView):
 def post_detail(request, slug):
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
-    return render(request, "album/post_detail.html", {"post": post, "coder": "PU90PX"})
+    comments = post.comments.all().order_by("-created_on")
+    comment_count = post.comments.filter(approved=True).count()
+    comment_form = CommentForm()
+
+    return render(request, "album/post_detail.html", {
+        "post": post,
+        "coder": "PU90PX",  
+        "comments": comments,
+        "comment_count": comment_count,
+        "comment_form": comment_form,
+    })
+
 
 class CategoryList(generic.ListView):
     template_name = 'base.html'
