@@ -5,14 +5,11 @@ from pu90px import settings
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls)
-]
-
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-urlpatterns += [
+    path('admin/', admin.site.urls),
     path("", include("album.urls"), name='album-urls'),
     path("accounts/", include("allauth.urls")),
     path('summernote/', include('django_summernote.urls'))
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
