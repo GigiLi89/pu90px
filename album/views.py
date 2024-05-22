@@ -30,6 +30,8 @@ def post_detail(request, slug):
     else:
         comment_form = CommentForm()
 
+    print(post.__dict__)
+
     return render(request, "album/post_detail.html", {
         "post": post,
         "coder": "PU90PX",  
