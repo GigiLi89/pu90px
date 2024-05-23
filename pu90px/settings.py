@@ -31,7 +31,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = false
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-gigili89-pu90px-5w4wvhtne2p.ws-eu111.gitpod.io',
                 '8000-gigili89-pu90px-5w4wvhtne2p.ws-eu114.gitpod.io',
