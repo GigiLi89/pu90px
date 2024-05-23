@@ -1,17 +1,17 @@
 body {
     background-color: #F9FAFC;
+    font-family: poppins, sans-serif;
 }
 
 .brand {
-    font-family: poppins, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #000000;
 }
 
 .card {
     border: none;
-    background-color: transparent;
+    background-color: #F9FAFC;
 }
 
 .image-container {
@@ -22,13 +22,8 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    left: -2px;
     background-color: #3271C3;
-}
-
-.scale {
-    width: 100%;
-    height: auto;
+    opacity: 90%;
 }
 
 .author {
@@ -37,6 +32,7 @@ body {
     text-transform: uppercase;
 }
 
+/* masthead code from Code Institutes Django walkthrough project */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -73,6 +69,7 @@ body {
 
 .post-link {
     text-decoration: none;
+    font-weight: 400;
     color: #445261;
 }
 
@@ -82,7 +79,7 @@ body {
 }
 
 .post-title {
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: 5%;
 }
 
@@ -99,7 +96,7 @@ body {
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3271C3;
 }
 

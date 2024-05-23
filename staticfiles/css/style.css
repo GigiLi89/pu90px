@@ -1,17 +1,17 @@
 body {
     background-color: #F9FAFC;
+    font-family: poppins, sans-serif;
 }
 
 .brand {
-    font-family: poppins, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: #000000;
 }
 
 .card {
     border: none;
-    background-color: transparent;
+    background-color: #F9FAFC;
 }
 
 .image-container {
@@ -22,13 +22,8 @@ body {
     position: absolute;
     bottom: 5%;
     min-width: 30%;
-    left: -2px;
     background-color: #3271C3;
-}
-
-.scale {
-    width: 100%;
-    height: auto;
+    opacity: 90%;
 }
 
 .author {
@@ -37,6 +32,7 @@ body {
     text-transform: uppercase;
 }
 
+/* masthead code from Code Institutes Django walkthrough project */
 .masthead {
     margin-top: 10px;
     overflow: hidden;
@@ -57,7 +53,7 @@ body {
     overflow: hidden;
 }
 
-.masthead-image:after {
+masthead-image:after {
     content: "";
     position: absolute;
     top: 0;
@@ -73,6 +69,7 @@ body {
 
 .post-link {
     text-decoration: none;
+    font-weight: 400;
     color: #445261;
 }
 
@@ -82,7 +79,7 @@ body {
 }
 
 .post-title {
-    margin-top: 10%;
+    margin-top: 15%;
     margin-left: 5%;
 }
 
@@ -93,13 +90,13 @@ body {
 
 .btn-signup,
 .btn-edit {
-    background-color: #188181;
+    background-color: #3271C3;
     color: #fff;
 }
 
 .btn-signup:hover,
 .btn-signup:active {
-    background-color: #fff;
+    background-color: #ffffff;
     color: #3271C3;
 }
 
@@ -139,3 +136,45 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+form.signup input,
+form.signup select,
+form.signup textarea,
+form.login input,
+form.login select,
+form.login textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+
+form.signup button,
+form.login button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  cursor: pointer;
+}
+
+form.signup button:hover,
+form.login button:hover {
+  background-color: #0056b3;
+}
+
+form.signup .form-check,
+form.login .form-check {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+form.signup .form-check-label,
+form.login .form-check-label {
+  margin-left: 10px;
+}
+
