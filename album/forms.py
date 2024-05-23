@@ -1,6 +1,5 @@
-from .models import Comment
 from django import forms
-
+from .models import Comment
 
 class CommentForm(forms.ModelForm):
     class Meta:
@@ -9,9 +8,3 @@ class CommentForm(forms.ModelForm):
         labels = {
             'body': 'Comment'
         }
-
-class UserDeactivateForm(forms.Form):
-    confirm = forms.BooleanField(label="Confirm deactivation")
-
-class UserDeleteForm(forms.Form):
-    confirm = forms.BooleanField(label="Confirm deletion")
