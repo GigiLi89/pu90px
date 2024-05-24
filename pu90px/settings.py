@@ -33,7 +33,7 @@ STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['8000-gigili89-pu90px-5w4wvhtne2p.ws-eu111.gitpod.io',
                 '8000-gigili89-pu90px-5w4wvhtne2p.ws-eu114.gitpod.io',
@@ -172,7 +172,9 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 STATIC_URL = '/static/'
 STATICFILES_STORAGE = 'cloudinary_storage.storage.StaticHashedCloudinaryStorage'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),'/workspace/pu90px/static',
+    ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 
