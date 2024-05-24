@@ -2,13 +2,19 @@
 {% block title %} Profile Page {% endblock %}
 {% block content %}
 
+<!-- Delete account information text + button -->
 <div class="row my-3 p-3">
-    <h1>This is my profile page for {{user.username}}</h1>
+    <h1>Hello {{user.username}}</h1>
+    <p>Click the button below if you wish to delete your account.</p>
+    <p>Please note that you will not be able to regain your account again once it's deleted.</p>
 
-    <button onclick="confirmDeleteAccount()" style="width: 250px; border:none; padding: 10px; background-color: red; border-radius: 10px; color: white;">Delete Account</button>
+    <button onclick="confirmDeleteAccount()" style="width: 250px; border:none; margin-left: 20px; padding: 10px; background-color: #3271C3; border-radius: 10px; color: white;">Delete Account</button>
 </div>
 
 {% endblock content %}
+
+
+<!-- swal fire styling for delete button -->
 {% block extras %}
 <script>
     function confirmDeleteAccount() {
@@ -20,7 +26,6 @@
             confirmButtonText: "Yes",
             cancelButtonText: `No`
         }).then((result) => {
-            /* Read more about isConfirmed, isDenied below */
             if (result.isConfirmed) {
                 window.location.href = "{% url 'delete-profile' %}";
             }
