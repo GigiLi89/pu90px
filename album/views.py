@@ -3,10 +3,12 @@ from django.views import generic
 from .models import Post, Category, Comment
 from .forms import CommentForm
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
+from django.shortcuts import render
+from django.http import Http404
 
 
 class PostList(generic.ListView):
@@ -86,3 +88,19 @@ def comment_delete(request, slug, comment_id):
         messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
+
+@login_required
+def profile(request):
+    return render(request, 'account/profile.html')
+
+
+@login_required
+def delete_profile(request):
+    user = request.user
+    if user.is_authenticated:
+        print('User is logged In')
+        # TODO: Write your delete logic here
+        user.delete()
+        
+    return HttpResponse("Account Deleted...")

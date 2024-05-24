@@ -1,6 +1,30 @@
-<h2>Profile</h2>
-<p>Welcome, {{ user.username }}!</p>
-<!-- Add other profile information here -->
+{% extends "base.html" %}
+{% block title %} Profile Page {% endblock %}
+{% block content %}
 
-<a href="{% url 'deactivate_account' %}">Deactivate Account</a>
-<a href="{% url 'delete_account' %}">Delete Account</a>
+<div class="row my-3 p-3">
+    <h1>This is my profile page for {{user.username}}</h1>
+
+    <button onclick="confirmDeleteAccount()" style="width: 250px; border:none; padding: 10px; background-color: red; border-radius: 10px; color: white;">Delete Account</button>
+</div>
+
+{% endblock content %}
+{% block extras %}
+<script>
+    function confirmDeleteAccount() {
+        Swal.fire({
+            title: "Are you sure?",
+            text: 'Do you want to delete your account?',
+            icon: 'question',
+            showCancelButton: true,
+            confirmButtonText: "Yes",
+            cancelButtonText: `No`
+        }).then((result) => {
+            /* Read more about isConfirmed, isDenied below */
+            if (result.isConfirmed) {
+                window.location.href = "{% url 'delete-profile' %}";
+            }
+        });
+    }
+</script>
+    {% endblock %}
