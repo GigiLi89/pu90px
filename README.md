@@ -267,6 +267,7 @@ Please find the testing documentation in a seperate file, link below:
 
 ## Credits & Resources
 - Code Institute, especially the Django Walkthrough Project. Amazingly done!
+    - Please note that when CI is mentioned in the code it stands for Code Institute.
 - Django secret key generator: https://djecrety.ir/
 - Webp converter: https://convertio.co/png-webp/
 - Royalty free photos: https://www.pexels.com/sv-se/sok/gratis%20bilder/
