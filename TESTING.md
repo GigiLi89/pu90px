@@ -42,6 +42,10 @@ I used JSHint Validator to validate the JavaScript files.
 
 All errors from JSHint indicating ES6 errors which will be ignored after consulting my mentor and tutor. 
 
+#### PEP8 CI Python Linter
+
+I used Code Institutes PEP8 Python Linter to help me find the errors. Nothing major, just missing a blank line here and there and that is fixed. 
+
 ### Google Chrome Dev Tools
 
 Was throwing console errors about third party cookie, this is caused because of the content upload via Django admin. I've added a sessions_cookie_name to None in the settings.py. I have commented the code out for now since login to admin panel doesn't work if it's on but I have still stored it in the settings.py file. 

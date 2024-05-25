@@ -10,18 +10,18 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 
 
-
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "album/index.html"
     paginate_by = 6
+
 
 def post_detail(request, slug):
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)
     comments = post.comments.all().order_by("-created_on")
     comment_count = post.comments.filter(approved=True).count()
-    
+
     if request.method == "POST":
         comment_form = CommentForm(data=request.POST)
         if comment_form.is_valid():
@@ -38,11 +38,12 @@ def post_detail(request, slug):
 
     return render(request, "album/post_detail.html", {
         "post": post,
-        "coder": "PU90PX",  
+        "coder": "PU90PX",
         "comments": comments,
         "comment_count": comment_count,
         "comment_form": comment_form,
     })
+
 
 class CategoryList(generic.ListView):
     template_name = 'base.html'
@@ -58,6 +59,7 @@ class CategoryList(generic.ListView):
         context['categories'] = Category.objects.all()
         return context
 
+
 def comment_edit(request, slug, comment_id):
     if request.method == "POST":
         queryset = Post.objects.filter(status=1)
@@ -72,9 +74,10 @@ def comment_edit(request, slug, comment_id):
             comment.save()
             messages.add_message(request, messages.SUCCESS, 'Comment Updated!')
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating comment!')
+            messages.add_message(request, messages.ERROR, 'Error occured!')
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
+
 
 def comment_delete(request, slug, comment_id):
     queryset = Post.objects.filter(status=1)
@@ -85,7 +88,8 @@ def comment_delete(request, slug, comment_id):
         comment.delete()
         messages.add_message(request, messages.SUCCESS, 'Comment deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own comments!')
+        message = 'You can only delete your own comments!'
+        messages.add_message(request, messages.ERROR, message)
 
     return HttpResponseRedirect(reverse('post_detail', args=[slug]))
 
@@ -102,6 +106,5 @@ def delete_profile(request):
         print('User is logged In')
         # TODO: Write your delete logic here
         user.delete()
-        
-    return HttpResponse("Account Deleted...")
 
+    return HttpResponse("Account Deleted...")
