@@ -197,6 +197,7 @@ By using Django Admin and Cloudinary together I used an SQL Database to store in
 - Google Fonts: to import fonts.
 - Google Dev Tools: for troubleshooting and solce issues with styling and images.
 - Heroku: hosting and deploying of the site.
+- Postgres/ElephantSQL
 - Microsoft Excel: Creating data models.
 - Canva: Creating logo and editing images.
 - JSHint: To check JavaScript files for bugs.
@@ -278,6 +279,7 @@ Please find the testing documentation in a seperate file, link below:
     - https://www.youtube.com/watch?v=nGIg40xs9e4
 - Contrast checker: https://webaim.org/resources/contrastchecker/
 - Pep8: https://pep8ci.herokuapp.com/
+- Book: Web Development with Django by Ben Shaw, Saurabh Badhwar, Chris Guest
 
 ### Acknowledgements
 - A big big thanks to Rebecca and John at the Tutor support.
