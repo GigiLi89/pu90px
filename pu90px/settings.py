@@ -39,7 +39,7 @@ ALLOWED_HOSTS = [
     '8000-gigili89-pu90px-5w4wvhtne2p.ws-eu111.gitpod.io',
     '8000-gigili89-pu90px-5w4wvhtne2p.ws-eu114.gitpod.io',
     '8000-gigili89-pu90px-5w4wvhtne2p.ws-eu114.gitpod.io',
-    'herokuapp.com'
+    '.herokuapp.com'
 ]
 
 
