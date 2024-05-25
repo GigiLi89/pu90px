@@ -40,3 +40,8 @@ I used JSHint Validator to validate the JavaScript files.
 
 All errors from JSHint indicating ES6 errors which will be ignored after consulting my mentor and tutor. 
 
+### Google Chrome Dev Tools
+
+Was throwing console errors about third party cookie, this is caused because of the content upload via Django admin. I've added a sessions_cookie_name to None in the settings.py. I have commented the code out for now since login to admin panel doesn't work if it's on but I have still stored it in the settings.py file. 
+
+Lighthouse also indicated on the PErformance which was at a low 32. I changed all the images to webp from jpg/png which got it up to 46. I then compressed the images using Djangos Pillow which got it up to 76.

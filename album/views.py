@@ -8,7 +8,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
 from django.contrib.auth.models import User
 from django.shortcuts import render
-from django.http import Http404
+
 
 
 class PostList(generic.ListView):
@@ -104,3 +104,4 @@ def delete_profile(request):
         user.delete()
         
     return HttpResponse("Account Deleted...")
+
