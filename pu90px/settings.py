@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 
 from pathlib import Path
 import os
+import sys
 import dj_database_url
 if os.path.isfile('env.py'):
     import env
@@ -107,24 +108,11 @@ TEMPLATES = [
 WSGI_APPLICATION = 'pu90px.wsgi.application'
 
 
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-# DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
-#    }
-# }
-
-
-# Password validation
-# https://docs.djangoproject.com/en/5.0/ref/settings/#auth-password-validators
-
-# Connect to env variable DATABASE_URL:
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get("DATABASE_URL"))
+    'default': dj_database_url.parse(
+                       os.environ.get("DATABASE_URL"))
 }
+
 
 CSRF_TRUSTED_ORIGINS = [
     "https://8000-gigili89-pu90px-5w4wvhtne2p.ws-eu111.gitpod.io",

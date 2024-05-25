@@ -70,8 +70,8 @@
           </p>
           {% endif %}
           {% if user.is_authenticated and comment.author == user %}
-          <button class="btn btn-delete"comment_id="{{ comment.id }}">Delete</button>
-            <button class="btn btn-edit"comment_id="{{ comment.id }}">Edit</button>
+          <button class="btn btn-delete" comment_id="{{ comment.id }}">Delete</button>
+          <button class="btn btn-edit" comment_id="{{ comment.id }}">Edit</button>
             {% endif %}
         </div>
         <!-- Our for loop ends here -->
@@ -127,7 +127,7 @@
 {% endblock content %}
 
 {% block extras %}
-<script src="{% static 'js/comments.js' %}"></script>
+<script src="{%static 'js/comments.js' %}"></script>
 {% endblock %}
 
 {% block copyright %}
