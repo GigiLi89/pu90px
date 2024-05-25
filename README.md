@@ -118,6 +118,16 @@ If logged in:
 - Content/pagination: Features the categories/albums with a photo in each card as well as theme, a small description, who posted it and the date it was posted. 
 - Footer: Has a copyright text as well as a description of who made it and the purpose of making it. The client did not want to link his social medias on the site therefor I did not use Font Awesome icons or any other links for that. 
 
+Album page:
+
+![Album Page](readme_images/pu_album.png)
+
+Header and Footer:
+
+![Header](readme_images/pu_header.png)
+
+![Footer](readme_images/pu_footer.png)
+
 #### Album Pages
 - Logo at the top left corner, made in Canva by me. Links back to the Home page. 
 - Menu either next to logo or hamburger menu in the upper right corner with Home and Account. 
@@ -126,11 +136,27 @@ If logged in:
 - Content: Presentation of the image of the month with information like: location, gear etc. Under the presentation text we'll find the photo of the month. 
 - Footer: We'll find a counter for the comments as well as the comments and (if logged in) a textfield to write a comment. If logged in, user can also edit or delete previous posts they've made. 
 
+Register account:
+
+![Register Account](readme_images/pu_register.png)
+
+Delete account:
+
+![Delete Account](readme_images/pu_delete.png)
+
 #### User Account Page
 - Register page: User can sign up for an account/profile in order to write comments on the posts. 
 - Sign in: Allows registered user to sign in and access the feature to comment. 
 - Profile page: Has a small information text that user can delete their account if they wish to and that they can't recover the account back if it's deleted. Pressing the delete button will trigger a flash message asking the user if they are sure. If they click yes - The account will be deleted. 
 - Sign out: User can click on the sign out button to sign out, asked if they want to sign out and a message afterwards saying they're signed out. 
+
+Sign in page:
+
+![Sign in](readme_images/pu_login.png)
+
+Sign out page:
+
+![Sign out](readme_images/pu_signout.png)
 
 In all stages, status will be shown to the user that they are either signed in (and as what user) or signed out. 
 
