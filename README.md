@@ -145,7 +145,10 @@ In all stages, status will be shown to the user that they are either signed in (
 
 ### Accessibility
 
-                                !!!KOLLA UPP HÄR OCH FYLL I SEN !!!
+The Accessability on the site is good, I always make sure to check the contrasts with a very good tool called WEB Aim Contrast Checker: 
+
+![Contrast Checker](readme_images/pu_contrast.png)
+
 
 ## Technologies & Frameworks
 
@@ -231,7 +234,7 @@ I continually rested the site throughout the building process and fixed any issu
 
 Please find the testing documentation in a seperate file, link below:
 
-                !!! LINK TILL TESTING !!!
+[TESTING.md](TESTING.md)
 
 ---
 
@@ -247,6 +250,7 @@ Please find the testing documentation in a seperate file, link below:
 - Youtube tutorials: https://www.youtube.com/watch?v=ygzGr51dbsY
     - https://www.youtube.com/watch?v=Rp5vd34d-z4
     - https://www.youtube.com/watch?v=nGIg40xs9e4
+- Contrast checker: https://webaim.org/resources/contrastchecker/
 
 ### Acknowledgements
 - A big big thanks to Rebecca and John at the Tutor support.

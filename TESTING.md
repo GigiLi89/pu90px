@@ -1,5 +1,7 @@
 # PU90PX - TESTING
 
+![ Am I Responsive?](readme_images/pu_responsive.png)
+
 [View the live site here](https://pu90px-bb0793838f63.herokuapp.com/)
 
 I carried out test along the process of building the website. Getting the images to work was the biggest struggle for me and I'm greatful for the tutor team helping me and teaching me more about it. As for the design in comparison to the Wireframes I made before starting building the project it is quite similar. 
@@ -44,4 +46,27 @@ All errors from JSHint indicating ES6 errors which will be ignored after consult
 
 Was throwing console errors about third party cookie, this is caused because of the content upload via Django admin. I've added a sessions_cookie_name to None in the settings.py. I have commented the code out for now since login to admin panel doesn't work if it's on but I have still stored it in the settings.py file. 
 
-Lighthouse also indicated on the PErformance which was at a low 32. I changed all the images to webp from jpg/png which got it up to 46. I then compressed the images using Djangos Pillow which got it up to 76.
+#### Lighthouse
+
+Lighthouse also indicated on the Performance which was at a low 32. I changed all the images to webp from jpg/png which got it up to 46. I then compressed the images using Djangos Pillow which got it up to 76. After editing the images and resizing them I got the Performance up to 84. What's mostly affecting the score is the images but since it is a digital gallery, the images is the focus of the site.
+
+Lighthouse Desktop Home Page Score: 
+
+![Lighthouse Desktop Home Page](readme_images/lr_desk_home.png)
+
+Lighthouse Mobile Home Page Score:
+
+![Lighthouse Mobile Home Page](readme_images/lr_mobile_home.png)
+
+Lighthouse Desktop Content Page Score:
+
+![Lighthouse Desktop Content Page](readme_images/lr_desk_content.png)
+
+Lighthouse Mobile Content Page Score:
+
+![Lighthouse Mobile Content Page](readme_images/lr_mobile_content.png)
+
+What's affecting the Best Practise score is mostly the third party cookies due to using Django Admin Panel to upload content and also Cloudinary is causing some issues that lowers the score.
+
+---
+
