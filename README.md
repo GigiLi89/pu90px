@@ -23,6 +23,8 @@ PU90PX is a page for photographer Pontus Unosson to share his work. A digital ga
 
 He likes to photograph these objects: Nature, Animals, City Cars, Airplanes and Animals. This site is dedicated to his passion for photography and to share it with other with similar interests. 
 
+Please note that I used Code Institutes template when starting the workspace and the project is for educational purposes. 
+
 #### Client Goals
 
 - Easily navigating through the categories to see the photo of the month. 
@@ -134,6 +136,7 @@ Header and Footer:
     - Account dropdown menu has the featured listed above.
 - Header with album category description, photographer and an image from pexels. 
 - Content: Presentation of the image of the month with information like: location, gear etc. Under the presentation text we'll find the photo of the month. 
+- When there is more than 6 posts the pagination buttons will be activated and user can navigate between posts with the Next and Previous button. 
 - Footer: We'll find a counter for the comments as well as the comments and (if logged in) a textfield to write a comment. If logged in, user can also edit or delete previous posts they've made. 
 
 Register account:
@@ -160,7 +163,8 @@ Sign out page:
 
 In all stages, status will be shown to the user that they are either signed in (and as what user) or signed out. 
 
-###Future Implementations
+### Future Implementations
+
 - Update user profile with information of the user, possibly what camera gear they are using or photo categories they like. 
 - Sort photos in the themed categories and presented in a dropdown menu. 
 - A page about the camera gear that the photographer is using. 
@@ -168,6 +172,7 @@ In all stages, status will be shown to the user that they are either signed in (
 - A map feature showing where the photo was taken.
 - Contact page to contact photographer directly on the site. 
 - Like button or a rating system to rate the photos.
+- Auto-approve comments with some checks/restrictions.
 
 ### Accessibility
 

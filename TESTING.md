@@ -104,7 +104,25 @@ What's affecting the Best Practise score is mostly the third party cookies due t
 |                             | Signout message                                 | When signed out user will se a message at the top of the site informing user that they have been signed out                                                             | Clicked on Signout Button                                     | Pass      |
 | Albums (Posts)              | Posts                                           | When user clicks on any of the posts (albums) it should direct to that specific themed photo post.                                                                      | Clicked on the posts                                          | Pass      |
 |                             | Inside post                                     | User should be able to see the post (a photo and information about the photo)                                                                                           | Clicked post and got directed to post (album)                 | Pass      |
+|                             | Pagination Next                                 | When adding more than 6 posts the next button shows. When clicking the next button it will direct to the next page with posts                                           | Clicked Next Button                                           | Pass      |
+|                             | Pagination Previous                             | When on any other page than the first page the previous button will show. When clicked it will direct back to the previous page of where you are.                       | Clicked Previous Button                                       | Pass      |
 | Comments                    | Leave comment                                   | Logged in user can post comments at the bottom of the page in a post by writing in the text field and clicking submit                                                   | Wrote a test and clicked Submit Button                        | Pass      |
 |                             | Approve comment                                 | When user has left a comment, admin is able to chose to approve the comment first.                                                                                      | Logged in as admin and checked admin panel, approved comment  | Pass      |
 |                             | Edit comment                                    | When user is logged in they can edit post they have made                                                                                                                | Clicked Edit and textfield activated with the comment         | Pass      |
 |                             | Delete comment                                  | When user is logged in they can delete post they have made                                                                                                              | Clicked on Delete and post was deleted                        | Pass      |
+
+---
+
+### Devices & Extra testing help
+
+I made the tests on my laptop, a Lenovo IdeaPad 1 14ADA7. I also did tests on my Ipad Mini 4 and my Iphone 11 Pro Max. 
+
+Friends and family tried the Heroku-deployed app when final deployment was finished. They got to navigate around with functions in mind. The feedback came back good with mostly ideas on how to develop the site further which is written down in the future features in the README.md. 
+
+Devices it was tested on:
+- Google Pixel 7
+- Iphone 15
+- Samsung S24
+- Apple Macbook Pro 2019
+- Lenovo ThinkPad T480s
+
