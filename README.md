@@ -163,6 +163,15 @@ Sign out page:
 
 In all stages, status will be shown to the user that they are either signed in (and as what user) or signed out. 
 
+### Admin Panel
+
+Admin is able to post new photos of the month using Django admin. Admin can also manage comments and profiles from the admin panel. Admin panel is accessed via the deployed sites url and adding /admin at the end of the url.
+
+Making the panel more user friendly I've chosen to use Jazzmin to jazz up the panel.
+
+![Django Admin Panel](readme_images/pu_djangoadmin.png)
+
+
 ### Future Implementations
 
 - Update user profile with information of the user, possibly what camera gear they are using or photo categories they like. 
