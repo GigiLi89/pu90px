@@ -203,6 +203,7 @@ The Accessability on the site is good, I always make sure to check the contrasts
 By using Django Admin and Cloudinary together I used an SQL Database to store information of my Django models and attibutes, even though Cloudinary alone is not a SQL database.
 
 ### Frameworks and resources
+- Code Institute: Django Walkthrough
 - Am I Responsive?: Showing the responsiveness on different devices.
 - Balsamiq: Created the wireframes.
 - Gitpod: IDE to deploy workspace enviroment to Github.
