@@ -10,12 +10,14 @@ from django.contrib.auth.models import User
 from django.shortcuts import render
 
 
+# From CI
 class PostList(generic.ListView):
     queryset = Post.objects.filter(status=1)
     template_name = "album/index.html"
     paginate_by = 6
 
 
+# Partly from CI
 def post_detail(request, slug):
     queryset = Post.objects.filter(status=1)
     post = get_object_or_404(queryset, slug=slug)

@@ -3,6 +3,7 @@ from .models import Post, Comment, Category, Profile
 from django_summernote.admin import SummernoteModelAdmin
 
 
+# From CI
 @admin.register(Post)
 class PostAdmin(SummernoteModelAdmin):
     list_display = ('title', 'slug', 'status', 'display_image')
